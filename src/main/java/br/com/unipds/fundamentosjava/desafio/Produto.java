@@ -33,6 +33,7 @@ public class Produto {
 
     public void setId(int id) {
         this.id = id;
+        validarId();
     }
 
     public String getNome() {
