@@ -54,7 +54,7 @@ public class Produto {
     }
 
     private void validarNome(){
-        if(nome == null || nome.isEmpty()){
+        if(nome == null || nome.trim().isEmpty()){
             throw new NomeObrigatorioException("Nome do produto deve ser informado");
         }
     }
@@ -67,7 +67,7 @@ public class Produto {
 
     private void validarEstoque(){
         if(quantidadeEmEstoque < 0.0){
-            throw new EstoqueNegativoException("Quantidade em estoque não pode ser negativo");
+            throw new EstoqueNegativoException("Quantidade em estoque não pode ser negativa");
         }
     }
 
