@@ -10,13 +10,13 @@ public class Main {
             Produto produto1 = new Produto(101, "Caneta Azul", 1.50, 100);
             System.out.println("Produto 1 (Inicial): " + produto1);
 
-            produto1.setPreco(-2.00);
+            produto1 = new Produto(101, "Caneta Azul", -2.00, 100);
             System.out.println("Produto 1 (Preço alterado): " + produto1);
 
             Produto produto2 = new Produto(102, "Azul Caneta", 15.00, 50);
             System.out.println("Produto 2 (Inicial): " + produto2);
 
-            produto2.setQuantidadeEmEstoque(-5);
+            produto2 = new Produto(102, "Azul Caneta", 15.00, -5);
             System.out.println("Produto 2 (Estoque alterado): " + produto2);
 
             Produto produto3 = new Produto(103, "Borracha Branca", -0.50, 0);
@@ -25,7 +25,15 @@ public class Main {
             Produto produto4 = new Produto(104, null, 10.00, 10);
             System.out.println("Produto 4 (Inicial): " + produto4);
 
-        } catch (RuntimeException e){
+        } catch (EstoqueNegativoException e){
+            System.out.println(e.getMessage());
+        } catch (IdNegativoOuZeroException e){
+            System.out.println(e.getMessage());
+        } catch (NomeObrigatorioException e){
+            System.out.println(e.getMessage());
+        } catch (PrecoZeroOuNegativoException e){
+            System.out.println(e.getMessage());
+        } catch (Exception e){
             System.out.println("Erro: " + e.getMessage());
         }
 
